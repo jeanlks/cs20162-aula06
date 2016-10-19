@@ -52,5 +52,19 @@ public class AlgoritmosTest {
 		int[] d = { 0, 0, 0, 7, 1, 7, 6, 3, 1, 1, 8, 1 };
 		Algoritmos.cpf2(d);
 	}
-
+	//Testes para cp3
+	@Test(expected = IllegalArgumentException.class)
+	public void CPF3InValido12DigitosTest() {
+		int[] d = { 0, 0, 0, 7, 1, 7, 6, 3, 1, 1, 8, 1 };
+		Algoritmos.cpf3(d);
+	}
+	@Test
+	public void CPF3InValidoTest() {
+		int[] d = { 0, 0, 0, 7, 1, 7, 6, 3, 1, 1, 8 };
+		assertFalse(Algoritmos.cpf3(d));
+	}
+	public void CPF3ValidoTest() {
+		int[] d = { 0, 3, 7, 7, 1, 7, 6, 3, 1, 1, 8 };
+		assertTrue(Algoritmos.cpf3(d));
+	}
 }
