@@ -5,7 +5,14 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class AlgoritmosTest {
-
+	//Testes para funcao mod 
+	@Test(expected = IllegalArgumentException.class)
+	public void modInvalidoValorYTest(){
+	Algoritmos.mod(-1, 1);
+	}
+	public void modInvalidoValorXTest(){
+		Algoritmos.mod(0, -2);
+	}
 	// Testes para funcao cpf
 	@Test
 	public void CPFValidoTest() {
