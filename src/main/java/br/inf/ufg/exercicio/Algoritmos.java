@@ -114,7 +114,7 @@ public static boolean cpf2(final int[] d) {
       final int numero8 = 8;
       final int numero9 = 9;
       final int numero10 = 10;
-   	  final int numero11 = 11;
+      final int numero11 = 11;
       if (d.length > numero11) {
          throw new IllegalArgumentException("cpf maior que 11 digitos");
        }
