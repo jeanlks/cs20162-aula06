@@ -1,23 +1,23 @@
 package br.inf.ufg.exercicio;
 
 /**
- * Algoritmos definidos como exercicio para aula2.
- * 
- * @author Jean
- */
-public class Algoritmos {
+* Algoritmos definidos como exercicio para aula2.
+*
+* @author Jean
+*/
+public final class Algoritmos {
 
      /**
-     * Algoritmo para calculo de resto de divisoes
-     * 
+     * Algoritmo para calculo de resto de divisoes.
+     *
      * @param x
      *            valor de x para divisao
      * @param y
      *            valor de y para divisao
      * @return resto da divisao
-     * 
+     *
      */
-public static int mod(int x, int y) {
+public static int mod(final int x, final int y) {
        if (x < 0 || y < 0) {
         throw new IllegalArgumentException("x ou y menor que 0");
        }
@@ -29,57 +29,99 @@ public static int mod(int x, int y) {
    }
 
     /**
-     * Algoritmo para validação de cpf
-     * 
-     * @param d
-     *            parametro com o numero do cpf
+     * Algoritmo para validação de cpf.
+     * @param d parametro com o numero do cpf
      * @return valor true or false dependendo da validade do cpf
      */
-public static boolean cpf(final int d[]) {
-     if (d.length > 11) {
+public static boolean cpf(final int[] d) {
+    final int numero0 = 0;
+    final int numero1 = 1;
+    final int numero2 = 2;
+    final int numero3 = 3;
+    final int numero4 = 4;
+    final int numero5 = 5;
+    final int numero6 = 6;
+    final int numero7 = 7;
+    final int numero8 = 8;
+    final int numero9 = 9;
+    final int numero10 = 10;
+    final int numero11 = 11;
+    if (d.length > numero11) {
       throw new IllegalArgumentException("Numero de cpf maior que 11 digitos");
       }
-      int sj = d[0] + 2 * d[1] + 3 * d[2] + 4 * d[3] + 5 * d[4] + 6 * d[5] + 7 * d[6] + 8 * d[7] + 9 * d[8];
-      int sk = d[1] + 2 * d[2] + 3 * d[3] + 4 * d[4] + 5 * d[5] + 6 * d[6] + 7 * d[7] + 8 * d[8] + 9 * d[9];
-      int j = mod(mod(sj, 11), 10);
-      int k = mod(mod(sk, 11), 10);
+      int sj = d[numero0] + numero2 * d[numero1] + numero3
+              * d[numero2] + numero4 * d[numero3] + numero5
+              * d[numero4] + numero6 * d[numero5] + numero7
+              * d[numero6] + numero8 * d[numero7] + numero9 * d[numero8];
+      int sk = d[numero1] + numero2 * d[numero2] + numero3 * d[numero3]
+               + numero4 * d[numero4] + numero5 * d[numero5]
+               + numero6 * d[numero6] + numero7 * d[numero7]
+               + numero8 * d[numero8] + numero9 * d[numero9];
+      int j = mod(mod(sj, numero11), numero10);
+      int k = mod(mod(sk, numero11), numero10);
 
-      return (j == d[9]) && (k == d[10]);
+      return (j == d[numero9]) && (k == d[numero10]);
     }
 
     /**
-    * Algoritmo para validação de cpf
-    * 
+    * Algoritmo para validação de cpf.
+    *
     * @param d
     *            parametro com o numero do cpf
     * @return valor true or false dependendo da validade do cpf
     */
-public static boolean cpf2(final int d[]) {
-      if (d.length > 11) {
-        throw new IllegalArgumentException("Numero de cpf maior que 11 digitos");
+public static boolean cpf2(final int[] d) {
+      final int numero0 = 0;
+      final int numero7 = 7;
+      final int numero8 = 8;
+      final int numero9 = 9;
+      final int numero10 = 10;
+      final int numero11 = 11;
+      if (d.length > numero11) {
+        throw new IllegalArgumentException(" cpf maior que 11 digitos");
       }
-      int c = 7;
-      int p = d[8];
-      int s = d[8];
+      int c = numero7;
+      int p = d[numero8];
+      int s = d[numero8];
 
-     while (0 <= c) {
+     while (numero0 <= c) {
         p = p + d[c];
         s = s + p;
         c = c - 1;
       }
-     int j = mod(mod(s, 11), 10);
-     int k = mod(mod(s - p + 9 * j, 11), 10);
+     int j = mod(mod(s, numero11), numero10);
+     int k = mod(mod(s - p + numero9 * j, numero11), numero10);
 
-     return (j == d[9]) && (k == d[10]);
+     return (j == d[numero9]) && (k == d[numero10]);
    }
 
-     public static boolean cpf3(int[] d) {
-       if (d.length > 11) {
-         throw new IllegalArgumentException("Numero de cpf maior que 11 digitos");
+/**
+* Algoritmo para validacao de cpf.
+*
+* @param d
+*            parametro com o numero do cpf
+* @return valor true or false dependendo da validade do cpf
+*/
+     public static boolean cpf3(final int[] d) {
+      final int numero0 = 0;
+      final int numero1 = 1;
+      final int numero2 = 2;
+      final int numero3 = 3;
+      final int numero4 = 4;
+      final int numero5 = 5;
+      final int numero6 = 6;
+      final int numero7 = 7;
+      final int numero8 = 8;
+      final int numero9 = 9;
+      final int numero10 = 10;
+   	  final int numero11 = 11;
+      if (d.length > numero11) {
+         throw new IllegalArgumentException("cpf maior que 11 digitos");
        }
-       int c = 7;
-       int p = d[8] + d[7] + d[6] + d[5] + d[4] + d[3] +d[2] + d[1] + d[0];
-       int s = d[8];
+       int c = numero7;
+       int p = d[numero8] + d[numero7] + d[numero6] + d[numero5] + d[numero4]
+              + d[numero3] + d[numero2] + d[numero1] + d[numero0];
+       int s = d[numero8];
 
 
      while (0 <= c) {
@@ -87,8 +129,13 @@ public static boolean cpf2(final int d[]) {
        s = s + p;
        c = c - 1;
      }
-     int j = mod(mod(s, 11), 10);
-     int k = mod(mod(s - p + 9 * j, 11), 10);
-     return (j == d[9]) && (k == d[10]);
+     int j = mod(mod(s, numero11), numero10);
+     int k = mod(mod(s - p + numero9 * j, numero11), numero10);
+     return (j == d[numero9]) && (k == d[numero10]);
+ }
+ /**
+ * Construtor privado.
+ */
+ private Algoritmos() {
  }
 }
